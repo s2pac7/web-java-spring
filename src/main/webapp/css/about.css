@@ -1,0 +1,32 @@
+/* Основные стили для страницы "О нас" */
+body {
+    background-color: #e6f2ff;
+}
+
+.about-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 50px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.about-container h1 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.about-container p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Дополнительные стили для активной ссылки в навигации */
+.navbar-nav .nav-link.active {
+    background-color: #FFA500;
+    border-radius: 5px;
+}

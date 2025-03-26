@@ -1,0 +1,24 @@
+/* Основные стили для страницы онлайн-табло */
+body {
+    background-color: #e6f2ff;
+}
+
+.board-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 50px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.board-container h1 {
+    color: #003366;
+    margin-bottom: 30px;
+}
+
+/* Дополнительные стили для активной ссылки в навигации */
+.navbar-nav .nav-link.active {
+    background-color: #FFA500;
+    border-radius: 5px;
+}
