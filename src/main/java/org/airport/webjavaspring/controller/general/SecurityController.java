@@ -54,21 +54,6 @@ public class SecurityController {
         this.jwtCore = jwtCore;
     }
 
-    @PostMapping("/signup")
-    ResponseEntity<?> signup(@RequestBody SignupRequest signupRequest) {
-        if(userRepository.existsUserByUsername(signupRequest.getUsername())) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Username already exists");
-        }
-
-        User user = new User();
-        user.setUsername(signupRequest.getUsername());
-        user.setPassword(passwordEncoder.encode(signupRequest.getPassword()));
-        user.setRole(Role.USER);
-        userRepository.save(user);
-        return ResponseEntity.ok("User created");
-    }
-
-
     @PostMapping("/signin")
     ResponseEntity<?> signin(@RequestBody SigninRequest signinRequest) {
         Authentication authentication;

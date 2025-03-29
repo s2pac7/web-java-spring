@@ -2,32 +2,72 @@
 <html>
 <head>
   <title>Регистрация</title>
-  <script>
-    async function signup() {
-      let username = document.getElementById("username").value;
-      let password = document.getElementById("password").value;
-
-      let response = await fetch('/auth/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
-      });
-
-      let result = await response.text();
-      alert(result);
-      if (response.ok) {
-        window.location.href = "/signin"; // ✅ Переход через контроллер
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/signup.css">
 </head>
 <body>
-<h2>Регистрация</h2>
-<input type="text" id="username" placeholder="Введите логин" required><br>
-<input type="password" id="password" placeholder="Введите пароль" required><br>
-<button onclick="signup()">Зарегистрироваться</button>
-<p>Уже есть аккаунт? <a href="/signin">Войти</a></p> <!-- ✅ Исправлено -->
+<div class="auth-container">
+  <div class="auth-card">
+    <h2 class="auth-title">Регистрация</h2>
+
+    <form id="registerForm" class="auth-form">
+      <div class="form-group">
+        <input type="text" id="username" placeholder="Логин" required>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Пароль" required>
+      </div>
+      <div class="form-row">
+        <div class="form-group half-width">
+          <input type="text" id="name" placeholder="Имя" required>
+        </div>
+        <div class="form-group half-width">
+          <input type="text" id="surname" placeholder="Фамилия" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="text" id="passportNumber" placeholder="Паспортные данные" required>
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth">Дата рождения</label>
+        <input type="date" id="dateOfBirth" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phoneNumber" placeholder="Номер телефона" required>
+      </div>
+
+      <div class="radio-group">
+        <span class="radio-label">Инвалидность:</span>
+        <label class="radio-option">
+          <input type="radio" name="has_disability" value="true">
+          <span>Да</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="has_disability" value="false" checked>
+          <span>Нет</span>
+        </label>
+      </div>
+
+      <div class="radio-group">
+        <span class="radio-label">Студент:</span>
+        <label class="radio-option">
+          <input type="radio" name="is_student" value="true">
+          <span>Да</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="is_student" value="false" checked>
+          <span>Нет</span>
+        </label>
+      </div>
+
+      <button type="button" class="auth-button" onclick="signup()">Зарегистрироваться</button>
+    </form>
+
+    <div class="auth-footer">
+      Уже есть аккаунт? <a href="/signin" class="auth-link">Войти</a>
+    </div>
+  </div>
+</div>
+
+<script src="${pageContext.request.contextPath}/js/signup.js"></script>
 </body>
 </html>
