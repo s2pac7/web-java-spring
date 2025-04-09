@@ -34,8 +34,10 @@ public class TokenFilter extends OncePerRequestFilter {
 
         try {
             String headerAuth = request.getHeader("Authorization");
+            System.out.println("Received Authorization header: " + headerAuth);
             if (headerAuth != null && headerAuth.startsWith("Bearer ")) {
                 String jwt = headerAuth.substring(7);
+                System.out.println("Extracted JWT: " + jwt);
 
                 String username = jwtCore.getNameFromJwt(jwt);
                 if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {

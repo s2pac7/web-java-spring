@@ -17,13 +17,13 @@
             <div class="user-avatar">
                 <i class="fas fa-user-circle"></i>
             </div>
-            <h4>${user.name} ${user.surname}</h4>
+            <h4>${passenger.name} ${passenger.surname}</h4>
             <p>Пассажир</p>
             <div class="user-status online">Online</div>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-section">Мой профиль</li>
-            <li class="active"><a href="#profile"><i class="fas fa-user"></i> <span>Профиль</span></a></li>
+            <li class="active"><a href="/profile"><i class="fas fa-user"></i> <span>Профиль</span></a></li>
             <li><a href="#bookings"><i class="fas fa-ticket-alt"></i> <span>Мои билеты</span></a></li>
             <li><a href="#payments"><i class="fas fa-credit-card"></i> <span>Платежи</span></a></li>
 
@@ -58,22 +58,22 @@
             <div class="info-row">
                 <div class="info-group">
                     <label>Полное имя</label>
-                    <p>${user.name} ${user.surname}</p>
+                    <p>${passenger.name} ${passenger.surname}</p>
                 </div>
                 <div class="info-group">
                     <label>Номер телефона</label>
-                    <p>${user.phoneNumber}</p>
+                    <p>${passenger.phoneNumber}</p>
                 </div>
             </div>
 
             <div class="info-row">
                 <div class="info-group">
                     <label>Дата рождения</label>
-                    <p>${user.dateOfBirth}</p>
+                    <p>${passenger.dateOfBirth}</p>
                 </div>
                 <div class="info-group">
                     <label>Паспортные данные</label>
-                    <p>${user.passportNumber}</p>
+                    <p>${passenger.passportNumber}</p>
                 </div>
             </div>
 

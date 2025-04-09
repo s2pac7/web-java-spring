@@ -27,7 +27,20 @@ public class JWTCore {
     }
 
     public String getNameFromJwt(String token) {
-        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody().getSubject();
+        try {
+            Claims claims = Jwts.parser()
+                    .setSigningKey(secret)
+                    .parseClaimsJws(token)
+                    .getBody();
+
+            System.out.println("Token is valid. Username: " + claims.getSubject());
+            return claims.getSubject();
+        } catch (ExpiredJwtException e) {
+            System.err.println("Token expired: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Invalid token: " + e.getMessage());
+        }
+        return null;
     }
 
 }

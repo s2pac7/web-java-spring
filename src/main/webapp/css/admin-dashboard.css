@@ -31,6 +31,9 @@ body {
     height: 100vh;
     z-index: 100;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .sidebar-header {
@@ -38,6 +41,7 @@ body {
     text-align: center;
     background: rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
 }
 
 .admin-avatar {
@@ -58,10 +62,31 @@ body {
     background: var(--success-color);
 }
 
+.sidebar-menu-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-menu-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-menu-container::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 3px;
+}
+
 .sidebar-menu {
     list-style: none;
     padding: 0;
     margin: 0;
+    padding-bottom: 20px;
 }
 
 .menu-section {
@@ -346,7 +371,7 @@ table {
 
 /* Адаптивность */
 @media (max-width: 1200px) {
-    .sidebar {
+    .admin-sidebar {
         width: 80px;
     }
     .sidebar-header h4,

@@ -1,0 +1,82 @@
+/* Основные стили уже определены в общем CSS, но мы добавим специфичные для страницы самолётов */
+
+/* Стили для статусов самолётов */
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.status.confirmed {
+    background: #e6f7ee;
+    color: var(--success-color);
+}
+
+/* Специфичные иконки для самолётов */
+.fa-plane-departure {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+/* Адаптация карточек под информацию о самолётах */
+.aircraft-info-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.aircraft-info-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.aircraft-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.aircraft-detail {
+    margin-bottom: 10px;
+}
+
+.aircraft-detail label {
+    display: block;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.aircraft-detail span {
+    display: block;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Стили для модальных окон специфичные для самолётов */
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+    .aircraft-details {
+        grid-template-columns: 1fr;
+    }
+
+    .aircraft-info-card {
+        padding: 15px;
+    }
+}

@@ -15,16 +15,13 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.HashMap;
 
 import static com.fasterxml.jackson.databind.type.LogicalType.Map;
-
+@CrossOrigin(origins = "http://localhost:8080")
 @RestController
 @RequestMapping("/auth")
 public class SecurityController {
@@ -75,7 +72,7 @@ public class SecurityController {
         }
 
         // Определяем путь в зависимости от роли
-        String redirectUrl = user.getRole() == Role.ADMIN ? "/admin/admin-dashboard" : "/user/user-dashboard";
+        String redirectUrl = user.getRole() == Role.ADMIN ? "/admin" : "/user";
 
         // Возвращаем токен и URL для редиректа
         Map<String, String> response = new HashMap<String, String>(); // <-- Явно указываем типы

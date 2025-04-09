@@ -1,0 +1,107 @@
+/* Основные стили таблицы */
+#flightsTable {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    width: 100%;
+}
+
+#flightsTable th {
+    background-color: #f8f9fa;
+    padding: 12px 15px;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+#flightsTable td {
+    padding: 12px 15px;
+    vertical-align: middle;
+    background-color: white;
+    border-bottom: 1px solid #e9ecef;
+}
+
+#flightsTable tr:hover td {
+    background-color: #f8f9fa;
+}
+
+/* Стили для radio button */
+.flight-direction-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.flight-direction-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.flight-direction-item input[type="radio"] {
+    width: 16px;
+    height: 16px;
+}
+
+/* Стили для заблокированных полей */
+.airport-field[readonly] {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+}
+
+/* Иконки действий */
+.btn-action {
+    transition: all 0.3s ease;
+    margin: 0 5px;
+    color: #495057;
+    border: none;
+    background: none;
+    font-size: 1.1rem;
+}
+
+.btn-action:hover {
+    color: #0d6efd;
+    transform: scale(1.1);
+}
+
+.btn-action.delete:hover {
+    color: #dc3545;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    #flightsTable {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .flight-direction-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.report-preview {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.report-preview p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#downloadReport {
+    background: #dc3545;
+    border-color: #dc3545;
+}
+
+#downloadReport:hover {
+    background: #bb2d3b;
+    border-color: #bb2d3b;
+}

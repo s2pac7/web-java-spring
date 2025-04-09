@@ -41,12 +41,12 @@ public class IndexController {
         return "dashboard";
     }
 
-    @GetMapping("/user/user-dashboard")
+    @GetMapping("/user")
     public String showUserDashboard() {
         return "user-dashboard";
     }
 
-    @GetMapping("/admin/admin-dashboard")
+    @GetMapping("/admin")
     public String showAdminDashboard() {
         return "admin-dashboard";
     }

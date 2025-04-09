@@ -22,29 +22,31 @@
             <p>Администратор</p>
             <div class="admin-status online">Online</div>
         </div>
-        <ul class="sidebar-menu">
-            <li class="menu-section">Управление</li>
-            <li class="active"><a href="#dashboard"><i class="fas fa-tachometer-alt"></i> <span>Дашборд</span></a></li>
+        <div class="sidebar-menu-container">
+            <ul class="sidebar-menu">
+                <li class="menu-section">Управление</li>
+                <li class="active"><a href="/admin"><i class="fas fa-tachometer-alt"></i> <span>Дашборд</span></a></li>
+                <li><a href="/admin/admin-profile"><i class="fas fa-user-cog"></i> <span>Профиль</span></a></li>
 
-            <li class="menu-section">Авиация</li>
-            <li><a href="#flights"><i class="fas fa-plane"></i> <span>Рейсы</span></a></li>
-            <li><a href="#aircrafts"><i class="fas fa-plane-departure"></i> <span>Самолёты</span></a></li>
-            <li><a href="#routes"><i class="fas fa-route"></i> <span>Маршруты</span></a></li>
+                <li class="menu-section">Авиация</li>
+                <li><a href="/admin/flights"><i class="fas fa-plane"></i> <span>Рейсы</span></a></li>
+                <li><a href="/admin/aircrafts"><i class="fas fa-plane-departure"></i> <span>Самолёты</span></a></li>
 
-            <li class="menu-section">Пользователи</li>
-            <li><a href="#users"><i class="fas fa-users"></i> <span>Клиенты</span></a></li>
-            <li><a href="#staff"><i class="fas fa-user-tie"></i> <span>Персонал</span></a></li>
+                <li class="menu-section">Пользователи</li>
+                <li><a href="/admin/users"><i class="fas fa-users"></i> <span>Пользователи</span></a></li>
+                <li><a href="/admin/passengers"><i class="fas fa-user-tie"></i> <span>Пассажиры</span></a></li>
 
-            <li class="menu-section">Финансы</li>
-            <li><a href="#payments"><i class="fas fa-money-bill-wave"></i> <span>Платежи</span></a></li>
-            <li><a href="#reports"><i class="fas fa-chart-bar"></i> <span>Отчёты</span></a></li>
+                <li class="menu-section">Финансы</li>
+                <li><a href="#payments"><i class="fas fa-money-bill-wave"></i> <span>Платежи</span></a></li>
+                <li><a href="#reports"><i class="fas fa-chart-bar"></i> <span>Отчёты</span></a></li>
 
-            <li class="menu-section">Система</li>
-            <li><a href="#settings"><i class="fas fa-cogs"></i> <span>Настройки</span></a></li>
-            <li><a href="#logs"><i class="fas fa-clipboard-list"></i> <span>Логи</span></a></li>
+                <li class="menu-section">Система</li>
+                <li><a href="/admin/admin-profile"><i class="fas fa-cogs"></i> <span>Настройки</span></a></li>
+                <li><a href="#logs"><i class="fas fa-clipboard-list"></i> <span>Логи</span></a></li>
 
-            <li class="logout"><a href="/logout"><i class="fas fa-sign-out-alt"></i> <span>Выход</span></a></li>
-        </ul>
+                <li class="logout"><a href="/signin"><i class="fas fa-sign-out-alt"></i> <span>Выход</span></a></li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Основное содержимое -->
@@ -133,7 +135,6 @@
                             <button class="btn-action edit"><i class="fas fa-edit"></i></button>
                         </td>
                     </tr>
-                    <!-- Другие строки таблицы -->
                     </tbody>
                 </table>
             </div>
@@ -168,7 +169,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/admin-panel.js"></script>
 <script>
     $(document).ready(function() {
         $('#bookingsTable').DataTable({

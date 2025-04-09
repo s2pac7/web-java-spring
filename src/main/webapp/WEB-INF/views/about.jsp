@@ -20,7 +20,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/board">Онлайн-табло</a></li>
+                <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/board">Реклама</a></li>
                 <li class="nav-item"><a class="nav-link active" href="${pageContext.request.contextPath}/about">О нас</a></li>
                 <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/signin">Вход</a></li>
             </ul>
